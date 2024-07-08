@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4nl12ojr05r0"]
+
+[ext_resource type="TileSet" uid="uid://5dttf1brgu5b" path="res://tileset.tres" id="1_nhshr"]
+[ext_resource type="Texture2D" uid="uid://dky1dnkusd1om" path="res://addos/kenney_alien-ufo-pack/PNG/shipBeige_manned.png" id="2_k1soj"]
+[ext_resource type="Texture2D" uid="uid://bnn312b503uhe" path="res://addos/kenney_alien-ufo-pack/PNG/shipGreen_manned.png" id="3_biw3k"]
+[ext_resource type="Texture2D" uid="uid://b3x64b724hjtr" path="res://addos/kenney_alien-ufo-pack/PNG/shipYellow_manned.png" id="4_dci3w"]
+[ext_resource type="Texture2D" uid="uid://v5kj1o1t2o6u" path="res://addos/kenney_alien-ufo-pack/PNG/shipBlue_manned.png" id="5_ygbe6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3fwvy"]
+radius = 50.0
+
+[node name="World" type="Node2D"]
+position = Vector2(343, 649)
+scale = Vector2(1, 0.997354)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(150, -367.974)
+scale = Vector2(1.03565, 1.03382)
+tile_set = ExtResource("1_nhshr")
+format = 2
+layer_0/tile_data = PackedInt32Array(-327683, 851968, 2, -458755, 786432, 3, -589827, 786432, 2)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(-142, -226.6)
+
+[node name="ShipBeigeManned" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(1, 1)
+texture = ExtResource("2_k1soj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, -1.00265)
+shape = SubResource("CircleShape2D_3fwvy")
+
+[node name="ShipGreenManned" type="Sprite2D" parent="."]
+position = Vector2(-172, -918.121)
+texture = ExtResource("3_biw3k")
+
+[node name="ShipYellowManned" type="Sprite2D" parent="."]
+position = Vector2(-174, -752.992)
+texture = ExtResource("4_dci3w")
+
+[node name="ShipBlueManned" type="Sprite2D" parent="."]
+position = Vector2(-178, -1066.82)
+texture = ExtResource("5_ygbe6")
